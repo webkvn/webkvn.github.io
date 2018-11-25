@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=o9eGesSQqcQGkKaiqu1ZHAg9gkF0ShnC&coord=bd09ll"></script>
+    <title>百度地图测试</title>
+</head>
+<body>
+    <h1>使用百度地图</h1>  
+<div id="container"></div>  
+    <script type="text/javascript">  
+        // 创建地图实例，避免与Map重名，所以使用BMap.Map  
+        var map = new BMap.Map("container");  
+        // 创建点坐标  
+        var point = new BMap.Point(113.946317,22.549008);  
+        // 初始化地图，设置中心点坐标和地图级别 1~18级  
+        map.centerAndZoom(point, 18);  
+    
+        //鼠标滚动，地图缩放  
+        map.enableScrollWheelZoom(true);  
+    
+        //添加地图控件  
+        map.addControl(new BMap.NavigationControl());  
+        map.addControl(new BMap.OverviewMapControl());  
+        map.addControl(new BMap.ScaleControl());  
+        map.addControl(new BMap.MapTypeControl());  
+    
+        //添加地图标注  
+        var marker=map.addOverlay(new BMap.Marker(point));  
+    
+        
+        
+    
+    </script>  
+</body>
+</html>
